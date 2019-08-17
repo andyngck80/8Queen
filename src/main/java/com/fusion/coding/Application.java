@@ -3,12 +3,17 @@ package com.fusion.coding;
 public class Application {
 
     public static void main(String[] args) {
-        Application application = new Application();
-        application.check(args);
+        hasEngagingQueens(args);
     }
 
-    public boolean check(String[] positions) {
-        // TODO: implement logic
+    public static boolean hasEngagingQueens(String[] positions) {
+        ChessBoard chessBoard = new ChessBoard();
+        for (int i = 0; i < positions.length; i++) {
+            if (!chessBoard.placeQueen(positions[i])) {
+                return true;
+            }
+        }
+
         return false;
     }
 }
